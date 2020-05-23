@@ -49,11 +49,6 @@ func (o *addOptions) run() error {
 		return err
 	}
 
-	//namespaceList, err := o.kubeClient.CoreV1().Namespaces().List(v1.ListOptions{LabelSelector: label})
-	//for _, n := range namespaceList.Items {
-	//	fmt.Println(n.Labels[label])
-	//}
-
 	fmt.Fprintf(o.io.Out, "Namespace \"%s\" successfully added to the group \"%s\".\n", ns.Name, o.name)
 
 	return nil

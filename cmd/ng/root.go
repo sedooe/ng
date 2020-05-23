@@ -21,6 +21,7 @@ func newRootCmd(io genericclioptions.IOStreams) *cobra.Command {
 	cmd.AddCommand(
 		newAddCmd(io, cf),
 		newRemoveCmd(io, cf),
+		newShowCmd(io, cf),
 	)
 
 	cf.AddFlags(cmd.Flags())

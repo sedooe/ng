@@ -3,8 +3,8 @@ module github.com/sedooe/ng
 go 1.13
 
 require (
+	github.com/olekukonko/tablewriter v0.0.4
 	github.com/pkg/errors v0.8.1
-	github.com/spf13/afero v1.2.2
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/pflag v1.0.5
 	google.golang.org/appengine v1.6.1 // indirect

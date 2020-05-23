@@ -33,3 +33,12 @@ func (kc KubernetesClient) UpdateNamespace(ns *v1.Namespace) error {
 	}
 	return nil
 }
+
+func (kc KubernetesClient) GetNamespaces(labelSelector string) ([]v1.Namespace, error) {
+	namespaceList, err := kc.Client.CoreV1().Namespaces().List(metav1.ListOptions{LabelSelector: labelSelector})
+	if err != nil {
+		return nil, err
+	}
+
+	return namespaceList.Items, nil
+}

@@ -12,7 +12,7 @@ Every namespace can belong to at most 1 namespace group.
 USAGE:
   ng add <NAME>                            : add namespace to ng <NAME>
   ng remove                                : remove namespace from ng
-  ng grant <USER> -g <NG> -r <ROLE>        : grant <USER> role <ROLE> for namespace group <NG>
-  ng revoke <USER> -g <NG> -r <ROLE>       : revoke <USER>'s role <ROLE> for namespace group <NG>
-  ng list                                  : list all namespace groups with namespaces
+  ng grant <USER> -g <NG> -r <ROLE>        : grant <USER> role <ROLE> for ng <NG>
+  ng revoke <USER> -g <NG> -r <ROLE>       : revoke <USER>'s role <ROLE> for ng <NG>
+  ng show [<NAME>]                         : show ng with its associated namespaces
 ```
