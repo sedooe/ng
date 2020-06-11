@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"strings"
+
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
 	"github.com/sedooe/ng/internal/cmdutil"
 	"github.com/sedooe/ng/internal/kubeclient"
 	"github.com/spf13/cobra"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
-	"strings"
 )
 
 type showOptions struct {

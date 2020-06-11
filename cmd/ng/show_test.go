@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/sedooe/ng/internal/kubeclient"
-	"k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"reflect"
 	"testing"
+
+	"github.com/sedooe/ng/internal/kubeclient"
+	v1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func TestShow(t *testing.T) {
@@ -39,7 +40,7 @@ func TestShow(t *testing.T) {
 		{
 			name: "no ng with no command",
 			o: &showOptions{
-				cli:  kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithLabel),
+				cli: kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithLabel),
 			},
 			want: make(map[string][]string),
 		},
@@ -70,7 +71,7 @@ func TestShow(t *testing.T) {
 		{
 			name: "2 ng with no command",
 			o: &showOptions{
-				cli:  kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithNgLabel, &nsWithNgLabel3),
+				cli: kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithNgLabel, &nsWithNgLabel3),
 			},
 			want: map[string][]string{testNg: {nsWithNgLabel.Name, nsWithNgLabel3.Name}},
 		},
@@ -85,7 +86,7 @@ func TestShow(t *testing.T) {
 		{
 			name: "all ngs",
 			o: &showOptions{
-				cli:  kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithNgLabel, &nsWithNgLabel2, &nsWithNgLabel3),
+				cli: kubeclient.NewFakeKubernetesClient(&nsWithoutLabel, &nsWithNgLabel, &nsWithNgLabel2, &nsWithNgLabel3),
 			},
 			want: map[string][]string{testNg: {nsWithNgLabel.Name, nsWithNgLabel3.Name}, "frontend": {nsWithNgLabel2.Name}},
 		},

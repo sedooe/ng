@@ -3,10 +3,11 @@ package main
 import (
 	"errors"
 	"fmt"
+
 	"github.com/sedooe/ng/internal/cmdutil"
 	"github.com/sedooe/ng/internal/kubeclient"
 	"github.com/spf13/cobra"
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 )
 

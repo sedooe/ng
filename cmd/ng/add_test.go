@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/sedooe/ng/internal/kubeclient"
-	"k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"reflect"
 	"testing"
+
+	"github.com/sedooe/ng/internal/kubeclient"
+	v1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const testNg = "backend"
